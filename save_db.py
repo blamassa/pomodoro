@@ -9,7 +9,7 @@ data_atual = time.strftime("%d/%m/%Y")
 
 
 def append_linha_nova(data_atual):
-    f = open('/home/blamassa/apps/pomodoro-database/db.csv', 'a', newline='')
+    f = open('/path/to/file/db.csv', 'a', newline='')
     writer=csv.writer(f)
     writer.writerow([str(data_atual)])
     f.close()
