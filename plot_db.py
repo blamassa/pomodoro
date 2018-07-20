@@ -5,7 +5,7 @@ import numpy as np
 plt.style.use('ggplot')
 
 
-f = open('/home/blamassa/apps/pomodoro-database/db.csv')
+f = open('/path/to/file/db.csv')
 data = f.read()
 f.close()
 
