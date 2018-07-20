@@ -7,7 +7,6 @@ import time
 # Ler a data e salvar em uma variavel
 data_atual = time.strftime("%d/%m/%Y")
 
-print(data_atual)
 
 def append_linha_nova(data_atual):
     f = open('/home/blamassa/apps/pomodoro-database/db.csv', 'a', newline='')
