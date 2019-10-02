@@ -1,33 +1,15 @@
 import matplotlib.pyplot as plt
-import numpy as np
-
+import pandas as pd
 
 plt.style.use('ggplot')
 
+df = pd.read_csv('db.csv', header = None)
+df.columns = ['date','project']
 
-f = open('/path/to/file/db.csv')
-data = f.read()
-f.close()
-
-
-data = data.split('\n')
-data.pop()
-
-
-x_list = []
-y_list = []
-
-
-for i in data:
-      if i not in x_list:
-          x_list.append(i)
-          y_list.append(data.count(i))
-
-
-x = np.arange(len(y_list))
 fig, ax = plt.subplots()
-plt.bar(x, y_list)
-plt.xticks(x,x_list)
+count_df = df.groupby('date').count()
+ax.bar(count_df.index, count_df['project'])
+
 plt.ylabel('Pomodoros')
 plt.xlabel('Datas')
 plt.title('Sessões Pomodoro por datas')
