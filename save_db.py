@@ -4,6 +4,7 @@
 import csv
 import sys
 import time
+import pandas as pd
 
 if sys.argv[-1] == 'save_db.py':
     project_name = 'none'
@@ -21,3 +22,5 @@ def append_linha_nova(data_atual):
     f.close()
 
 append_linha_nova(data_atual)
+
+## Update available projects
