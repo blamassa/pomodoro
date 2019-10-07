@@ -8,7 +8,7 @@ df.columns = ['date','project']
 df['value'] = [1]*len(df)
 df['date'] = [pd.datetime.strptime(i, '%d/%m/%Y').date() for i in df['date']]
 
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize = (20,10))
 
 dff = df.groupby(['date','project'],as_index=False).sum()
 pivot_df = dff.pivot(index='date', columns='project',values='value')
