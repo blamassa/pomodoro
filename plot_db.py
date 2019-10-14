@@ -20,7 +20,7 @@ pivot_df.loc[:,pivot_df.columns].plot.bar(stacked=True, ax = ax)
 # I want to plot all days until today. For this, I first need to know the number of days since the begining of the count.
 diff_days = (datetime.date.today() - pivot_df.index[0]).days
 datelist = [str(i)[:10] for i in pd.date_range(start = pivot_df.index[0], periods = diff_days)]
-plt.xticks(ticks = range(diff_days), labels = datelist)
+# plt.xticks(ticks = range(diff_days), labels = datelist)
 
 plt.ylabel('Pomodoros')
 plt.xlabel('Datas')
